@@ -1,4 +1,4 @@
-package sum_of_primes;
+package e03sum_of_primes;
 
 import java.util.Iterator;
 
@@ -42,13 +42,14 @@ public class Main implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return true; // allways
+        return true; // always
     }
 
 
     @Override
     public Object next() {
         return nextPrime();
+
     }
 
     @Override
@@ -60,8 +61,7 @@ public class Main implements Iterator {
         Iterator itr = new Main();
         int primeSum = 0;
         for (int i = 0; i < 1000; i++) {
-            primeSum += (int) itr.next();
-
+            primeSum += (Integer) itr.next();
         }
         System.out.println(primeSum);
     }

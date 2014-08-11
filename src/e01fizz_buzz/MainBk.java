@@ -1,4 +1,4 @@
-package fizz_buzz;
+package e01fizz_buzz;
 
 import java.io.*;
 
