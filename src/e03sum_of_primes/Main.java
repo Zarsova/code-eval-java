@@ -49,7 +49,6 @@ public class Main implements Iterator {
     @Override
     public Object next() {
         return nextPrime();
-
     }
 
     @Override
