@@ -25,6 +25,7 @@ public class Main implements Iterator {
                 if (n % p == 0) {
                     _primes[n] = false;
                 }
+
             }
         }
         primes = _primes;
@@ -42,7 +43,7 @@ public class Main implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return true; // always
+        return true; // allways
     }
 
 
