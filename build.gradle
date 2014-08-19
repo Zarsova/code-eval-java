@@ -4,7 +4,7 @@ version = "1.0-SNAPSHOT"
 description = "Code Eval Project"
 
 // Spock works with Java 1.5 and above
-sourceCompatibility = 1.5
+sourceCompatibility = 1.7
 
 repositories {
     // Spock releases are available from Maven Central
