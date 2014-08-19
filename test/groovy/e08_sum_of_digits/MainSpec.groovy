@@ -10,7 +10,7 @@ class MainSpec extends Specification {
         System.out = ps
 
         when:
-        Main.main(["input/e08-sum_of_digits.txt"] as String[])
+        Main.main(["input/e08_sum_of_digits.txt"] as String[])
 
         then:
         1 * ps.println("5")

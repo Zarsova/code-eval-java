@@ -11,7 +11,7 @@ class MainSpec extends Specification {
         System.out = ps
 
         when:
-        Main.main(["input/e01-fizz_buzz.txt"] as String[])
+        Main.main(["input/e01_fizz_buzz.txt"] as String[])
 
         then:
         1 * ps.println("1 2 F 4 B F 7 8 F B")

@@ -10,7 +10,7 @@ class MainSpec extends Specification {
         System.out = ps
 
         when:
-        Main.main(["input/e07-lowercase.txt"] as String[])
+        Main.main(["input/e07_lowercase.txt"] as String[])
 
         then:
         1 * ps.println("hello codeeval")

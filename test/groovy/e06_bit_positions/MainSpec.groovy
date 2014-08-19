@@ -10,7 +10,7 @@ class MainSpec extends Specification {
         System.out = ps
 
         when:
-        Main.main(["input/e06-bit_positions.txt"] as String[])
+        Main.main(["input/e06_bit_positions.txt"] as String[])
 
         then:
         1 * ps.println("true")
