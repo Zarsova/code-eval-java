@@ -1,4 +1,4 @@
-package e02reverse_words;
+package e02_reverse_words;
 
 import java.io.BufferedReader;
 import java.io.File;

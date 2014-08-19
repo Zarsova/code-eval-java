@@ -1,4 +1,4 @@
-package e03sum_of_primes;
+package e03_sum_of_primes;
 
 import java.util.Iterator;
 

@@ -1,4 +1,4 @@
-package e04prime_palindrome;
+package e04_prime_palindrome;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package e01fizz_buzz;
+package e01_fizz_buzz;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,7 +49,7 @@ public class Main {
                 int fizz = Integer.parseInt(lineArray[0]);
                 int buzz = Integer.parseInt(lineArray[1]);
                 int last = Integer.parseInt(lineArray[2]);
-                System.out.println(new Main(fizz, buzz, last));
+                System.out.println(new Main(fizz, buzz, last).toString());
             }
         }
     }

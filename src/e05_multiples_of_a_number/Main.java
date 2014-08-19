@@ -1,4 +1,4 @@
-package e05multiples_of_a_number;
+package e05_multiples_of_a_number;
 
 import java.io.BufferedReader;
 import java.io.File;
