@@ -17,6 +17,7 @@ dependencies {
     // mandatory dependencies for using Spock
     groovy "org.codehaus.groovy:groovy-all:2.1.5"
     testCompile "org.spockframework:spock-core:[0,)"
+    testCompile "org.gperfutils:gprof:[0,)"
 
     // optional dependencies for using Spock
     testCompile "org.hamcrest:hamcrest-core:1.3" // only necessary if Hamcrest matchers are used
