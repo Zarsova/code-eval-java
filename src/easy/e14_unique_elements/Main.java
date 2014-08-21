@@ -13,13 +13,16 @@ public class Main {
             String line;
             while ((line = in.readLine()) != null) {
                 if (line.length() > 0) {
-                    HashSet<Integer> intSet = new HashSet<>();
                     String[] strArray = line.split(",");
+                    // create set from strArray
+                    HashSet<Integer> intSet = new HashSet<>();
                     for (String str : strArray) {
                         intSet.add(Integer.parseInt(str));
                     }
+                    // convert set to array and sort
                     Integer[] intArray = intSet.toArray(new Integer[intSet.size()]);
                     Arrays.sort(intArray);
+                    // output
                     StringBuilder sb = new StringBuilder();
                     for (Integer i : intArray) {
                         if (sb.length() > 0) {
