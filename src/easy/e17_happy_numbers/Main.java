@@ -23,6 +23,7 @@ public class Main {
                     }
                 }
             }
+            in.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -31,7 +32,6 @@ public class Main {
 
 class HappyNumbers {
     private final HashSet<Integer> happyNumbers = new HashSet<>();
-    private final HashSet<Integer> unHappyNumbers = new HashSet<>();
 
     public HappyNumbers() {
         happyNumbers.add(1);
@@ -43,10 +43,7 @@ class HappyNumbers {
                 happyNumbers.add(i);
             }
             return true;
-        } else if (unHappyNumbers.contains(n) || seq.contains(n)) {
-            for (int i : seq) {
-                unHappyNumbers.add(i);
-            }
+        } else if (seq.contains(n)) {
             return false;
         } else {
             seq.add(n);
