@@ -43,7 +43,6 @@ class CodeEvalRunner {
     }
 
     static long callMain(String[] inputs, Class<?> mainClass) {
-        long start = System.currentTimeMillis()
         File tmp
         if (inputs != null && inputs.length > 0) {
             if (!new File(inputs[0]).exists()) {
@@ -57,10 +56,12 @@ class CodeEvalRunner {
             }
         }
         String main = "main"
+        long start = System.currentTimeMillis()
         mainClass."$main"(inputs)
+        long duration = System.currentTimeMillis() - start
         if (tmp) {
             tmp.deleteOnExit()
         }
-        return System.currentTimeMillis() - start
+        return duration
     }
 }
