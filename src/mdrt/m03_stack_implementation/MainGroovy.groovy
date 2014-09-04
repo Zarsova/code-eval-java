@@ -7,7 +7,7 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/mdrt/m02_detecting_cycles.txt"] as String[], Main)
+        //CodeEvalRunner.run(["input/mdrt/m03_stack_implementation.txt"] as String[], Main)
         CodeEvalRunner.run(["1 2 3 4",
                             "10 -2 3 4"
         ] as String[], Main, true)
