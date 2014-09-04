@@ -1,4 +1,4 @@
-package moderate.m02_detecting_cycles;
+package mdrt.m02_detecting_cycles;
 
 /**
  ** Java Program to Implement Floyd Cycle Algorithm
