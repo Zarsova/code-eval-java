@@ -7,6 +7,6 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        CodeEvalRunner.run(["input/easy/e01_fizz_buzz.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["input/easy/e01_fizz_buzz.txt"] as String[], Main)
     }
 }

@@ -7,8 +7,8 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/easy/e46_racing_chars.txt"] as String[], Main)
-        CodeEvalRunner.run(["#########_##\n" +
+        //CodeEvalRunner.runAndPerf(["input/easy/e46_racing_chars.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["#########_##\n" +
                                     "########C_##\n" +
                                     "#######_####\n" +
                                     "######_#C###\n" +

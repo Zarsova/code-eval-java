@@ -7,12 +7,12 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/easy/e48_date_recovery.txt"] as String[], Main)
-        CodeEvalRunner.run(["2000 and was not However, implemented 1998 it until;9 8 3 4 1 5 7 2",
+        //CodeEvalRunner.runAndPerf(["input/easy/e48_date_recovery.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["2000 and was not However, implemented 1998 it until;9 8 3 4 1 5 7 2",
                             "programming first The language;3 2 1",
                             "programs Manchester The written ran Mark 1952 1 in Autocode from;6 2 1 7 5 3 11 4 8 9"
                             /*
-                            CodeEvalRunner.run(["first University language for programming the to of and was the Manchester compiled be 1 developed in computer The is Mark at the 1952 compiler code and considered first high-level;26 17 30 10 29 16 23 18 4 6 11 19 27 24 13 7 8 14 1 21 12 15 25 9 5 3 20 22 2",
+                            CodeEvalRunner.runAndPerf(["first University language for programming the to of and was the Manchester compiled be 1 developed in computer The is Mark at the 1952 compiler code and considered first high-level;26 17 30 10 29 16 23 18 4 6 11 19 27 24 13 7 8 14 1 21 12 15 25 9 5 3 20 22 2",
                                                 "into compiler convert code automatically programming machine it language, the language to a used A;13 7 10 15 9 2 14 4 3 11 12 8 6 5",
                                                 "1943 was developed early by Z3 German for language high-level designed for a programming An Zuse computer be to and Konrad between the 1945 Plankalkul,;23 12 14 2 19 18 17 9 5 3 8 15 10 4 1 21 11 7 6 24 20 22 16 25",
                                                 "second Brooker 1 developed for 1 was was by and Autocode\" called Mark in the \"Mark the autocode The 1954;2 11 9 5 6 19 15 4 10 14 20 16 8 12 7 18 17 3 1",

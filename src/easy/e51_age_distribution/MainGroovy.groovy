@@ -7,8 +7,8 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/easy/e51_age_distribution.txt"] as String[], Main)
-        CodeEvalRunner.run(["0",
+        //CodeEvalRunner.runAndPerf(["input/easy/e51_age_distribution.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["0",
                             "19"
         ] as String[], Main, true)
     }

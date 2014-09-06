@@ -1,4 +1,4 @@
-package mdrt.m07_remove_characters
+package mdrt.m09_number_of_ones
 
 import util.CodeEvalRunner
 

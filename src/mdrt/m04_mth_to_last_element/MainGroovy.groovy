@@ -7,8 +7,8 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/mdrt/m04_mth_to_last_element.txt"] as String[], Main)
-        CodeEvalRunner.run(["a b c d 4",
+        //CodeEvalRunner.runAndPerf(["input/mdrt/m04_mth_to_last_element.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["a b c d 4",
                             "e f g h 2"
         ] as String[], Main, true)
     }

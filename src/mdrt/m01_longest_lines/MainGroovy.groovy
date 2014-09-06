@@ -7,8 +7,8 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/easy/e52_roller_coaster.txt"] as String[], Main)
-        CodeEvalRunner.run(["2",
+        //CodeEvalRunner.runAndPerf(["input/easy/e52_roller_coaster.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["2",
                             "Hello World",
                             "CodeEval",
                             "Quick Fox",

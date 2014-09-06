@@ -7,8 +7,8 @@ import util.CodeEvalRunner
  */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.run(["input/easy/e49_lettercase_percentage_ratio.txt"] as String[], Main)
-        CodeEvalRunner.run(["thisTHIS",
+        //CodeEvalRunner.runAndPerf(["input/easy/e49_lettercase_percentage_ratio.txt"] as String[], Main)
+        CodeEvalRunner.runAndPerf(["thisTHIS",
                             "AAbbCCDDEE",
                             "N",
                             "UkJ9"

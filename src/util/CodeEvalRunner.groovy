@@ -4,7 +4,7 @@ package util
  * Created by develop on 2014/09/02.
  */
 class CodeEvalRunner {
-    static void run(String[] inputs, Class<?> mainClass, eachLine = false, long timeout = 1000) {
+    static void runAndPerf(String[] inputs, Class<?> mainClass, eachLine = false, long timeout = 1000) {
         ArrayList lap = []
         PrintStream org = System.out
         System.setOut(new PrintStream(new OutputStream() {
@@ -29,8 +29,7 @@ class CodeEvalRunner {
 
         if (eachLine) {
             inputs.eachWithIndex { input, idx ->
-                println "<-- case ${idx} -->"
-                println input
+                input.eachLine { line -> println "case ${idx} <-- ${line}" }
                 callMain([input] as String[], mainClass)
             }
         }

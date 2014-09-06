@@ -1,4 +1,4 @@
-package mdrt.m07_remove_characters
+package mdrt.m08_endianness
 
 import util.CodeEvalRunner
 
