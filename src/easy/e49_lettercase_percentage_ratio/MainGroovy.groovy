@@ -12,7 +12,7 @@ class MainGroovy {
                             "AAbbCCDDEE",
                             "N",
                             "UkJ9"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }
 

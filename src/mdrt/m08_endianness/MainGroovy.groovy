@@ -10,6 +10,6 @@ class MainGroovy {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
         CodeEvalRunner.runAndPerf(["how are you, abc",
                             "hello world, def"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }

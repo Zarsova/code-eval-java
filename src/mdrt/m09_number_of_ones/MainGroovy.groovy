@@ -8,8 +8,11 @@ import util.CodeEvalRunner
 class MainGroovy {
     static main(argv) {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
-        CodeEvalRunner.runAndPerf(["how are you, abc",
-                            "hello world, def"
-        ] as String[], Main, true)
+        def inputs = [
+                ["10", "2"],
+                ["22", "3"],
+                ["56", "3"]
+        ]
+        CodeEvalRunner.run(inputs, Main)
     }
 }

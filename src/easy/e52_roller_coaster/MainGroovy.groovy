@@ -13,7 +13,7 @@ class MainGroovy {
                             "The slings and arrows of outrageous fortune,",
                             "Or to take arms against a sea of troubles,",
                             "And by opposing end them? To die: to sleep."
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }
 

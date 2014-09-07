@@ -10,6 +10,6 @@ class MainGroovy {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m03_stack_implementation.txt"] as String[], Main)
         CodeEvalRunner.runAndPerf(["1 2 3 4",
                             "10 -2 3 4"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }

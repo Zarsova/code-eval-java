@@ -10,6 +10,6 @@ class MainGroovy {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m04_mth_to_last_element.txt"] as String[], Main)
         CodeEvalRunner.runAndPerf(["a b c d 4",
                             "e f g h 2"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }

@@ -33,7 +33,7 @@ class MainGroovy {
                                                 "the early was in US, Grace called FLOW-MATIC Hopper language programming devised Another by;11 2 5 10 12 8 13 14 9 4 3 6 1",
                                                 "ever proposed electronic developed the John computer 1949, an one languages high-level was of for Mauchly's in Short Code, first;15 5 19 16 11 1 20 7 18 9 14 13 8 10 17 2 6 3 4"
                             */
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }
 

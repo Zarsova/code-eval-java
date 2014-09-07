@@ -10,7 +10,7 @@ class MainGroovy {
         //CodeEvalRunner.runAndPerf(["input/easy/e51_age_distribution.txt"] as String[], Main)
         CodeEvalRunner.runAndPerf(["0",
                             "19"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }
 

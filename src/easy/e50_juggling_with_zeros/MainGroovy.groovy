@@ -12,7 +12,7 @@ class MainGroovy {
                             "00 0",
                             "00 0 0 000 00 0000000 0 000",
                             "0 000000000 00 00"
-        ] as String[], Main, true)
+        ], Main, true)
     }
 }
 

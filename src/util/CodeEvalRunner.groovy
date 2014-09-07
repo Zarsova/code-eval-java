@@ -4,7 +4,52 @@ package util
  * Created by develop on 2014/09/02.
  */
 class CodeEvalRunner {
-    static void runAndPerf(String[] inputs, Class<?> mainClass, eachLine = false, long timeout = 1000) {
+    static def run(List inputs, Class<?> mainClass, expects = null) {
+        if (expects == null) {
+            inputs.eachWithIndex { List testCase, i ->
+                testCase[0].eachLine { line ->
+                    println "case ${i + 1} <-- ${line}"
+                }
+                testCase[1].eachLine { line ->
+                    println "case ${i + 1} --> ${line}"
+                }
+                callMain([testCase[0]], mainClass)
+            }
+        } else {
+            inputs.eachWithIndex { def line, int i ->
+                println "in  ${i + 1} <-- ${line}"
+            }
+            expects.eachWithIndex { def line, int i ->
+                println "out ${i + 1} --> ${line}"
+            }
+            callMain(inputs, mainClass)
+        }
+    }
+
+    static long callMain(List inputs, Class<?> mainClass) {
+        File tmp
+        if (inputs != null && inputs.size() > 0) {
+            if (!new File(inputs[0]).exists()) {
+                tmp = File.createTempFile("codeEval", "txt")
+                tmp.withPrintWriter { w ->
+                    inputs.each { input ->
+                        w.println(input)
+                    }
+                }
+                inputs = [tmp.absolutePath] as String[]
+            }
+        }
+        String main = "main"
+        long start = System.currentTimeMillis()
+        mainClass."$main"(inputs as String[])
+        long duration = System.currentTimeMillis() - start
+        if (tmp) {
+            tmp.deleteOnExit()
+        }
+        return duration
+    }
+
+    static void runAndPerf(List inputs, Class<?> mainClass, eachLine = false, long timeout = 1000) {
         ArrayList lap = []
         PrintStream org = System.out
         System.setOut(new PrintStream(new OutputStream() {
@@ -30,37 +75,12 @@ class CodeEvalRunner {
         if (eachLine) {
             inputs.eachWithIndex { input, idx ->
                 input.eachLine { line -> println "case ${idx} <-- ${line}" }
-                callMain([input] as String[], mainClass)
+                callMain([input], mainClass)
             }
         }
-        println "<-- case all -->"
         inputs.each { input ->
-            println input
+            println "case all <-- ${input}"
         }
-        println "<-- result   -->"
         callMain(inputs, mainClass)
-    }
-
-    static long callMain(String[] inputs, Class<?> mainClass) {
-        File tmp
-        if (inputs != null && inputs.length > 0) {
-            if (!new File(inputs[0]).exists()) {
-                tmp = File.createTempFile("codeEval", "txt")
-                tmp.withPrintWriter { w ->
-                    inputs.each { input ->
-                        w.println(input)
-                    }
-                }
-                inputs = [tmp.absolutePath] as String[]
-            }
-        }
-        String main = "main"
-        long start = System.currentTimeMillis()
-        mainClass."$main"(inputs)
-        long duration = System.currentTimeMillis() - start
-        if (tmp) {
-            tmp.deleteOnExit()
-        }
-        return duration
     }
 }

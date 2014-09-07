@@ -32,21 +32,15 @@ public class Main implements Runnable {
     }
 
     private void parseLine(String line) {
-        final String[] strArray = line.split(", ");
-        final char[] string = strArray[0].toCharArray();
-        final char[] delChars = strArray[1].toCharArray();
-        final StringBuilder sb = new StringBuilder();
-        for (final char c : string) {
-            for (int i = 0, length = delChars.length; i < length; i++) {
-                if (c == delChars[i]) {
-                    break;
-                }
-                if (i == length - 1) {
-                    sb.append(c);
-                }
+        int n = Integer.parseInt(line);
+        int x = 0;
+        while (n > 0) {
+            if ((n & 0x1) == 0x1) {
+                x++;
             }
+            n = n >> 1;
         }
-        System.out.println(sb);
+        System.out.println(x);
     }
 
     public static void main(String[] args) {
