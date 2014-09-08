@@ -33,13 +33,11 @@ public class Main implements Runnable {
             c = Integer.parseInt(in.readLine());
             sqrtC = Math.sqrt(c);
             for (sqrtA = 0; sqrtA < sqrtC; sqrtA++) {
-                rad = Math.asin((double) sqrtA / sqrtC);
-                sqrtB = Math.cos(rad) * sqrtC;
+                sqrtB = Math.sqrt((double) c - Math.pow(sqrtA, 2));
                 if (sqrtA > sqrtB) {
                     break;
                 }
-                rSqrtB = Math.round(sqrtB * 1000000.0) / 1000000.0;
-                if ((int) rSqrtB == rSqrtB) {
+                if (sqrtB - (int) sqrtB == 0.0) {
                     count++;
                 }
             }
