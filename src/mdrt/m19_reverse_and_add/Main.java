@@ -1,9 +1,8 @@
-package mdrt.m18_jolly_jumpers;
+package mdrt.m19_reverse_and_add;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main implements Runnable {
     private final String fileName;
@@ -33,34 +32,27 @@ public class Main implements Runnable {
     }
 
     private void parseLine(String line) {
-        final String[] strArray = line.split(" ");
-        final int length = strArray.length; // 4
-
-        int[] intArray = new int[length];
-        for (int i = 0; i < length; i++) {
-            intArray[i] = Integer.parseInt(strArray[i]);
-        }
-
-        final int diffLength = length - 1; // 3
-        boolean[] diffExists = new boolean[diffLength];
-        Arrays.fill(diffExists, false);
-
-        boolean isJolly = true;
-        for (int i = 0; i < diffLength; i++) {
-            final int diff = Math.abs(intArray[i] - intArray[i + 1]);
-            if (diff < 1 || diff > diffLength) {
-                isJolly = false;
+        long n = Integer.parseInt(line);
+        int iteration = 0;
+        while (true) {
+            final long reverse = reverse(n);
+            if (reverse == n) {
+                System.out.println(iteration + " " + n);
                 break;
             }
-            if (diffExists[diff - 1]) {
-                isJolly = false;
-                break;
-            }
-            diffExists[diff - 1] = true;
+            n += reverse;
+            iteration++;
         }
-        System.out.println(
-                isJolly ? "Jolly" : "Not jolly"
-        );
+    }
+
+    private long reverse(long n) {
+        long x = 0L;
+        while (n > 0) {
+            x *= 10;
+            x += n % 10;
+            n = n / 10;
+        }
+        return x;
     }
 
     public static void main(String[] args) {
