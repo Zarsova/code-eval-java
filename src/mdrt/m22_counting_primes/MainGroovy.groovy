@@ -9,11 +9,8 @@ class MainGroovy {
     static main(argv) {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
         def inputs = [
-                "5\n" +
-                        "9 6\n" +
-                        "4 6 8\n" +
-                        "0 7 1 5"
+                "2,10\n20,30"
         ]
-        CodeEvalRunner.run(inputs, mdrt.m35_pass_triangle.Main, ["27"])
+        CodeEvalRunner.run(inputs, Main, ["4\n2"])
     }
 }
