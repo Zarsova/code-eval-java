@@ -1,4 +1,4 @@
-package mdrt.m20_prime_numbers
+package mdrt.m22_counting_primes
 
 import util.CodeEvalRunner
 
@@ -9,10 +9,11 @@ class MainGroovy {
     static main(argv) {
         //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
         def inputs = [
-                //"9\n13\n15\n19\n21\n"
-                //"7\n11\n13\n17\n19\n"
-                "8\n12\n14\n18\n20\n"
+                "5\n" +
+                        "9 6\n" +
+                        "4 6 8\n" +
+                        "0 7 1 5"
         ]
-        CodeEvalRunner.run(inputs, Main, ["", "", ""])
+        CodeEvalRunner.run(inputs, mdrt.m35_pass_triangle.Main, ["27"])
     }
 }

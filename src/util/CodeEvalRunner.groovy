@@ -17,10 +17,14 @@ class CodeEvalRunner {
             }
         } else {
             inputs.eachWithIndex { def line, int i ->
-                println "in  ${i + 1} <-- ${line}"
+                line.eachLine { def ll ->
+                    println "in  ${i + 1} <-- ${ll}"
+                }
             }
             expects.eachWithIndex { def line, int i ->
-                println "out ${i + 1} --> ${line}"
+                line.eachLine { def ll ->
+                    println "out ${i + 1} --> ${ll}"
+                }
             }
             callMain(inputs, mainClass)
         }

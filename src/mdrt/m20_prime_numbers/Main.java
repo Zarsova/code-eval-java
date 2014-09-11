@@ -7,10 +7,7 @@ import java.util.Arrays;
 
 public class Main implements Runnable {
     private final String fileName;
-    private boolean[] sieve = new boolean[0];
-    private int limit = 0;
-    private int[] pow = new int[0];
-    private int powIdx = -1;
+    private final boolean debug = false;
 
     public Main(final String fileName) {
         this.fileName = fileName;
@@ -38,10 +35,7 @@ public class Main implements Runnable {
 
     private void parseLine(String line) {
         final int limit = Integer.parseInt(line);
-        if (this.limit < limit) {
-            atkinSieve(limit, this.limit);
-            this.limit = limit;
-        }
+        atkinSieve(limit - 1);
 
         final StringBuilder result = new StringBuilder("2,3,5");
         for (int i = 7; i < limit; i++) {
@@ -52,13 +46,16 @@ public class Main implements Runnable {
         System.out.println(result);
     }
 
+    private int[] pow = new int[0];
+    private int powIdx = -1;
+
     private int pow(int n) {
         if (this.powIdx > n) {
             return this.pow[n];
         } else {
             int[] pow = Arrays.copyOf(this.pow, n + 1);
             for (int i = this.powIdx + 1; i <= n; i++) {
-                pow[i] = (int) Math.pow(i, 2);
+                pow[i] = i * i;
             }
             this.pow = pow;
             this.powIdx = n;
@@ -66,10 +63,30 @@ public class Main implements Runnable {
         }
     }
 
-    private void atkinSieve(final int limit, final int done) {
-        boolean[] sieve = Arrays.copyOf(this.sieve, limit + 1);
-        Arrays.fill(sieve, done + 1, limit, false);
-        final int factor = (int) Math.sqrt(limit) + 1;
+    private boolean[] sieve = new boolean[0];
+    private int limit = -1;
+
+    private void atkinSieve(final int _limit) {
+        debugPrint("############# limit/new limit", limit, _limit);
+
+        if (limit >= _limit) {
+            return;
+        }
+        int done = limit;
+
+        debugPrint("create _sieve size", _limit + 1);
+        debugPrint("sieve(org)", sieve);
+        debugPrint("sieve size(org)", sieve.length);
+
+        boolean[] _sieve = Arrays.copyOf(sieve, _limit + 1);
+
+        debugPrint("sieve(copy done)", _sieve);
+
+        Arrays.fill(_sieve, done + 1, _limit + 1, false);
+
+        debugPrint("sieve(fill done)", _sieve);
+
+        final int factor = (int) Math.sqrt(_limit) + 1;
         pow(factor);
         int i, j, n;
         for (i = 0; i < factor; i++) {
@@ -77,35 +94,59 @@ public class Main implements Runnable {
             for (j = 0; j < factor; j++) {
                 final int powJ = pow(j);
                 n = 4 * powI + powJ;
-                if (n >= done && n < limit && (n % 12 == 1 || n % 12 == 5)) {
-                    sieve[n] = !sieve[n];
+                if (n > done && n <= _limit && (n % 12 == 1 || n % 12 == 5)) {
+                    _sieve[n] = !_sieve[n];
                 }
                 n = 3 * powI + powJ;
-                if (n >= done && n < limit && (n % 12 == 7)) {
-                    sieve[n] = !sieve[n];
+                if (n > done && n <= _limit && (n % 12 == 7)) {
+                    _sieve[n] = !_sieve[n];
                 }
                 if (i > j) {
                     n = 3 * powI - powJ;
-                    if (n >= done && n < limit && (n % 12 == 11)) {
-                        sieve[n] = !sieve[n];
+                    if (n > done && n <= _limit && (n % 12 == 11)) {
+                        _sieve[n] = !_sieve[n];
                     }
                 }
             }
         }
         for (i = 5; i < factor; i++) {
-            if (sieve[i]) {
+            if (_sieve[i]) {
                 final int powI = pow(i);
-                for (j = powI; j < limit; j += powI) {
-                    if (j >= done) {
-                        sieve[j] = false;
+                for (j = powI; j <= _limit; j += powI) {
+                    if (j > done) {
+                        _sieve[j] = false;
                     }
                 }
             }
         }
-        this.sieve = sieve;
+        sieve = _sieve;
+        limit = _limit;
     }
 
     public static void main(String[] args) {
         new Main(args[0]).run();
     }
+
+
+    void debugPrint(String msg, Object... args) {
+        if (debug) {
+            StringBuilder sb = new StringBuilder();
+            for (Object arg : args) {
+                if (sb.length() > 0) {
+                    sb.append(", ");
+                }
+                if (arg instanceof int[]) {
+                    sb.append(Arrays.toString((int[]) arg));
+                } else if (arg instanceof boolean[]) {
+                    sb.append(Arrays.toString((boolean[]) arg));
+                } else if (arg instanceof String[]) {
+                    sb.append(Arrays.toString((String[]) arg));
+                } else {
+                    sb.append(arg);
+                }
+            }
+            System.out.println(msg + ": " + sb);
+        }
+    }
+
 }
