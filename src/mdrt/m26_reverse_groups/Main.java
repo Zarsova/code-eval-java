@@ -3,7 +3,6 @@ package mdrt.m26_reverse_groups;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main implements Runnable {
     private final String fileName;
