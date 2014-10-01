@@ -3,10 +3,7 @@ package mdrt.m36_simple_calculator;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main implements Runnable {
     private final String fileName;
@@ -70,12 +67,36 @@ class CalcParser {
         put(')', 5);
     }};
 
+    int weight(String token) {
+        char c = token.charAt(0);
+        if (operators.containsKey(c)) {
+            return operators.get(c);
+        } else {
+            return 0;
+        }
+    }
 
     void reverse() {
         String token;
+        List<String> orgList = new ArrayList<>();
+        List<Integer> weightList = new ArrayList<>();
+        Stack<String> stack = new Stack<>();
+        List<String> out = new ArrayList<>();
         while ((token = getToken()) != null) {
-            System.out.println(token);
+            int weight = weight(token);
+            orgList.add(token);
+            weightList.add(weight);
+
+            if(weight == 0){
+                out.add(token);
+            }
+            String topItem = stack.pop();
+            if(weight < weight(topItem)){
+                
+            }
         }
+        System.out.println(orgList);
+        System.out.println(weightList);
     }
 
     public String getToken() {
@@ -87,9 +108,7 @@ class CalcParser {
                 idx++;
             } else if (sb.length() > 0) {
                 isValue = true;
-                String result = sb.toString();
-                sb = new StringBuilder();
-                return result;
+                return sb.toString();
             } else if (c == ' ') {
                 idx++;
             } else {
@@ -99,8 +118,7 @@ class CalcParser {
             }
         }
         if (sb.length() > 0) {
-            String result = sb.toString();
-            return result;
+            return sb.toString();
         }
         return null;
     }
