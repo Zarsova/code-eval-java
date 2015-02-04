@@ -2,12 +2,8 @@ package mdrt.m19_reverse_and_add
 
 import util.CodeEvalRunner
 
-/**
- * Created by develop on 2014/09/02.
- */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
         def inputs = [
                 ["195", "4 9339"],
                 ["1439", "a"],

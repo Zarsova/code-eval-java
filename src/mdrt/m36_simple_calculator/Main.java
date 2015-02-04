@@ -87,12 +87,12 @@ class CalcParser {
             orgList.add(token);
             weightList.add(weight);
 
-            if(weight == 0){
+            if (weight == 0) {
                 out.add(token);
             }
             String topItem = stack.pop();
-            if(weight < weight(topItem)){
-                
+            if (weight < weight(topItem)) {
+
             }
         }
         System.out.println(orgList);

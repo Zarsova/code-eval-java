@@ -1,8 +1,5 @@
 package util
 
-/**
- * Created by develop on 2014/09/02.
- */
 class CodeEvalRunner {
     static def run(List inputs, Class<?> mainClass, expects = null) {
         if (expects == null) {

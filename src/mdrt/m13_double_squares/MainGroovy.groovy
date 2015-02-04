@@ -2,12 +2,8 @@ package mdrt.m13_double_squares
 
 import util.CodeEvalRunner
 
-/**
- * Created by develop on 2014/09/02.
- */
 class MainGroovy {
     static main(argv) {
-        //CodeEvalRunner.runAndPerf(["input/mdrt/m06_first_non_repeated_character.txt"] as String[], Main)
         def inputs = [
                 "20",
                 "437008825",

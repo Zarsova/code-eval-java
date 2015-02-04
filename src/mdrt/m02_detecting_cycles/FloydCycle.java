@@ -4,9 +4,9 @@ package mdrt.m02_detecting_cycles;
  ** Java Program to Implement Floyd Cycle Algorithm
  **/
 
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Class FloydCycle *
